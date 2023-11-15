@@ -1,7 +1,7 @@
 assume cs: code, ds: data, es: extra
 data segment
         str1 db "String Test", "$"
-        counter dw 1011H
+        counter dw 000BH
         eqs db "String is Equal!", "$"
         noteq db "String is not Equal!", "$"
 data ends

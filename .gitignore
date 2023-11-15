@@ -1,3 +1,7 @@
 *.exe
 *.obj
 *.com
+
+.vscode
+*.docx
+*.pdf

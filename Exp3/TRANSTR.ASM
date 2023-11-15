@@ -4,23 +4,19 @@ data segment
         str1 db "Hello World!", "$"
         counter dw 000CH
 data ends
-
 extra segment
         str2 db 12 dup(0), "$"; Size is in Decimal
 extra ends
-
 code segment
          start: MOV AX, data
                 MOV DS, AX
-
                 MOV AX, extra
                 MOV ES, AX
 
                 LEA SI, str1
                 LEA DI, str2
-                CLD; Clear Direction Flag
-
                 MOV CX, counter
+                CLD; Clear Direction Flag
 
         ;   UP: MOVSB
         ;       LOOP UP
@@ -31,7 +27,6 @@ code segment
                 LEA DX, str2
                 MOV AH, 09H
                 INT 21H
-                         
                 MOV AH, 4CH
                 INT 21H
 code ends

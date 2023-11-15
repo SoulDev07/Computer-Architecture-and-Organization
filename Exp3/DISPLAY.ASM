@@ -1,10 +1,8 @@
 ; Display String
 assume cs: code, ds: data
-
 data segment
         str db "Escape the Matrix", "$"; $ is the terminating character
 data ends
-
 code segment
          start: MOV AX, data
                 MOV DS, AX
@@ -15,7 +13,7 @@ code segment
                 MOV DX, SI
                 MOV AH, 09H
                 INT 21H
-               
+
                 MOV AH, 4CH
                 INT 21H
 code ends

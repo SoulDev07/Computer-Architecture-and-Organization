@@ -1,21 +1,15 @@
 assume cs: code, ds: data
 data segment
-        str db "edbca", "$"
+        str db "eeddccbbaa", "$"
+        counter dw 000AH
 data ends
 code segment
          start: MOV AX, data
                 MOV DS, AX
-                MOV CX, 0000H
+                MOV CX, counter
+                DEC CX
                 CLD
 
-           len: MOV AL, [SI]
-                CMP AL, "$"
-                JZ cont
-                INC SI
-                INC CX
-                JMP len
-
-          cont: DEC CX
          outer: LEA SI, str
                 MOV DX, 0000H
 
